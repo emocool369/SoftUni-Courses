@@ -63,8 +63,13 @@ if the substring is not present it will give -1 as the output.
 }
 This will output "The string contains the substring." because the substring "World" is present in the StringBuilder object.
 
-if(input.indexOf(indexSubstring) != - 1){                       //indexSubstring е стринг, от команда и се пише без кавички
-                    int start = input.indexOf(indexSubstring);  //indexSubstring е стринг, от команда и се пише без кавички
+
+String[] command = commands.split(":\\|:");
+
+            String commandType = command[0];
+            String indexSubstring = command[1];
+if(input.indexOf(indexSubstring) != - 1){                       //indexSubstring е число, от команда и се пише без кавички
+                    int start = input.indexOf(indexSubstring);  //indexSubstring е число, от команда и се пише без кавички
                     int end = input.indexOf(indexSubstring) + indexSubstring.length();
 
                     String subString = input.substring(start, end);

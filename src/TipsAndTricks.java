@@ -8,10 +8,20 @@ import java.text.DecimalFormat;
 import java.util.stream.Collectors;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
+/*
 public class TipsAndTricks {
 
+/*
+как се качва зип файл в джъдж
+дясно копче на пакета и Open in Explorer
+там пакета се прави на зип файл
+в джъдж избираме, че ще качаме зип файл, а не код от падащото меню до Submit
+ */
 
+
+
+
+ /*
     public static void main(String[] args) {
         Scanner scan = new Scanner((System.in));
        //BASIC
@@ -121,6 +131,47 @@ String reversed = new String(original.chars().mapToObj(c -> (char)c).toArray(),0
 You can then use the reversed variable to get the reversed string.
 
          */
+/*how to print string with first capital letter
+To capitalize the first letter of a string in Java, you can use the toUpperCase() method in combination with the substring() method to modify the input string.
+
+Here's an example code snippet that demonstrates how to capitalize the first letter of a string in Java:
+String input = "car";
+String output = input.substring(0, 1).toUpperCase() + input.substring(1);
+
+System.out.println(output); // prints "Car"
+
+In this code, we first create a variable input and assign the string "car" to it. Then, we create a variable output and assign the capitalized version of the input string to it.
+
+To capitalize the first letter of the input string, we call the substring() method twice: once to extract the first letter of the string (input.substring(0, 1)), and once to extract the remainder of the string (input.substring(1)). We then call the toUpperCase() method on the first letter to capitalize it. Finally, we concatenate the capitalized first letter with the rest of the string using the + operator.
+
+When we call System.out.println(output), it prints the capitalized string "Car".
+
+ */
+
+/*how to print % inside printf
+System.out.printf("Collected only %.2f%% of the plunder.", sumPlunder / expectedPlunder * 100);
+ */
+
+/*how to compare two texts and get the one that is bigger
+if(firstText.compareTo(secondText) > 0)
+return firstText;
+}else{
+return secondText;
+ */
+
+/*random
+public static String printPhrase (){
+
+        String[] phrases = {"Excellent product.", "Such a great product.", "I always use that product.",
+                "Best product of its category.", "Exceptional product.", "I can’t live without this product."};
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(phrases.length);
+        String randomString = phrases[randomIndex];
+        return randomString;
+
+    }
+ */
+
         /*
         String username = "Acer";, how can i reverse username without stringbuilder
 You can reverse a string without using the StringBuilder class by converting the string to a character array and then swapping the characters at the beginning and end of the array. Here's an example:
@@ -245,7 +296,7 @@ In the above example, the indexOf("#") method is used to find the position of th
         String output = String.format("Name: %s, Age: %02d, Grade: %.2f%n", name, age, grade);
         System.out.printf(output); -> print + String.format
         */
-        /*how to find length of string
+        /*how to find length of string, value of string, number of string
         String str = "Hello, World!";
         int len = str.length();
         System.out.println("The length of the string is: " + len);
@@ -285,8 +336,19 @@ In the above example, the indexOf("#") method is used to find the position of th
         System.out.print(number); -> 256
          */
 
-        //DecimalFormat
+        //DecimalFormat - how to print определен брой числа след десетичната запетая в случай, че ги има
         /*
+
+        double num = 1.146000;
+        DecimalFormat decimalFormat = new DecimalFormat("0.###");
+        String formattedNum = decimalFormat.format(num);
+        System.out.println(formattedNum); //1.146
+
+        DecimalFormat df = new DecimalFormat("0.##");
+        double result = calculation(operator, firstNum, secondNum); -> извиквам метод
+        System.out.println(df.format(result));
+
+
         DecimalFormat df = new DecimalFormat("0.####");
         System.out.println(df.format(power(num, power)));
         */
@@ -380,6 +442,10 @@ In the above example, the indexOf("#") method is used to find the position of th
             //return true;
          */
 
+        /*how to write in while several conditions
+         while (!(input.equals("special") || input.ls("regular")))
+
+         */
         /*split
         String text = "Pesho|Gosho|Ivan|Petko|Martin";
         String[] names = text.split("\\|"); -> разделя по символа |, а не по оператора |
@@ -424,13 +490,210 @@ It's important to note that the split() method splits the string into substrings
          */
 
         /*Number Values Stoinosti
-There are six numeric types four integer and two floating point:
-byte 1 byte -128 to 127.
-short 2 bytes -32,768 to 32,767.
-int 4 bytes -2,147,483,648 to 2,147,483,647.
-long 8 bytes -9,223,372,036,854,775,808 to 9,223,372,036,854,775,80.
-float 4 bytes 7 decimal digits.
+There are six numeric types four integer and two floating point:                                колко памет заемат
+byte 1 byte -128 (-2на7ма) to 127 (2на7ма - 1).                                                 = 8 bit
+short 2 bytes -32,768 (-2на15а) to 32,767. (2на15а - 1)                                         = 16 bit
+int 4 bytes -2,147,483,648 (-2на31) to 2,147,483,647 (2на31 - 1).                               = 32 bit
+long 8 bytes -9,223,372,036,854,775,808 (-2на63) to 9,223,372,036,854,775,80. (2на63 - 1)       = 64 bit
+float 4 bytes 7 decimal digits. - real number types
 double 8 bytes 16 decimal digits.
+Floating-point types are:
+float (±1.5X10на−45 to ±3.4X10на38)
+32-bits, the precision of 7 digits
+double (±5.0X10на−324 to ±1.7X10на308)
+64-bits, the precision of 15-16 digits
+The default value of floating-point types:
+Is 0.0F for the float type
+Is 0.0D for the double type
+float floatPI = 3.141592653589793238f; "f" Suffix
+double doublePI = 3.141592653589793238;
+System.out.println("Float PI is: " + floatPI);   - 3.1415927
+System.out.println("Double PI is: " + doublePI); - 3.141592653589793
+
+Floating-Point Division
+System.out.println(10 / 4);    // 2 (integral division)
+System.out.println(10 / 4.0);  // 2.5 (real division)
+System.out.println(10 / 0.0);  // Infinity
+System.out.println(-10 / 0.0); // -Infinity
+System.out.println(0 / 0.0);   // NaN (not a number)
+System.out.println(8 % 2.5);   // 0.5 (3 * 2.5 + 0.5 = 8)
+System.out.println(10 / 0);    // ArithmeticException
+
+
+BigDecimal - аритметични операции с висока прецизност / финансови калкулации
+BigDecimal number = new BigDecimal(0);
+number = number.add(BigDecimal.valueOf(2.5));       - добавяме
+number = number.subtract(BigDecimal.valueOf(1.5));  - изваждаме
+number = number.multiply(BigDecimal.valueOf(2));    - умножаваме
+number = number.divide(BigDecimal.valueOf(2));      - делиме
+
+how to calculate number times number, число на степен
+Math.pow(radius, 2) = радиус на степен 2
+
+how to decrease integer in java by 10 %
+In Java, you can decrease an integer by a certain percentage (in this case, 10%) by first multiplying the integer by that percentage as a decimal (0.1 in this case), and then subtracting the result from the original integer.
+
+Here's an example of how you can decrease an integer by 10% in Java:
+
+Copy code
+int num = 100;
+int decrease = (int) (num * 0.1);
+num -= decrease;
+System.out.println(num);
+This code first multiplies the integer num by 0.1, which is 10% as a decimal. Then it subtracts the result from the original value of num and assigns it back to num. The final value of num will be 90.
+
+You can also use the shorthand operator *= and -= to achieve the same thing
+
+Copy code
+int num = 100;
+num *= 0.9;
+System.out.println(num);
+This code will also output 90
+
+
+Type Conversion
+Type can be changed (converted) to another type
+Implicit type conversion (lossless): variable of the bigger type(e.g. Double) takes a smaller value (e.g. float)
+Implicit conversion:
+float heightInMeters = 1.74f;
+double maxHeight = heightInMeters;
+Explicit type conversion (lossy) – when precision can be lost:
+Explicit conversion:
+double size = 3.14;
+int intSize = (int) size;
+
+
+Boolean Type
+Boolean variables (boolean) hold true or false:
+int a = 1;
+int b = 2;
+boolean greaterAB = (a > b);
+System.out.println(greaterAB);  // False
+boolean equalA1 = (a == 1);
+System.out.println(equalA1);    // True
+
+boolean isSpecial = sum == 5 || sum == 7 || sum == 11;
+
+The Character Data Type
+
+Has a '\0' default value
+Takes 16 bits of memory (from U+0000 to U+FFFF)
+
+how to see the number of a char, как да видя числото на чар
+char symbol = 'a';
+System.out.printf("The code of '%c' is: %d%n", symbol, (int) symbol);
+result The code of 'a' is: 97
+
+int sum = symbol + 10;
+System.out.println(sum);
+result 107
+
+how to get char from a number
+char c = (char) i; i = 10,11,12 usw, i wird gekast
+
+how to read char from console
+char char1 = scan.nextLine().charAt(0);
+
+
+if(Character.isUpperCase(input)){
+System.out.println("upper-case");
+}else if (Character.isLowerCase(input)){
+System.out.println("lower-case");
+
+aaa
+aab
+aac
+
+ int n = Integer.parseInt(scan.nextLine());
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int k = 0; k < n; k++) {
+
+                    char firstChar = (char) ('a' + i);
+                    char secondChar = (char) ('a' + j);
+                    char thirdChar = (char) ('a' + k);
+
+                    System.out.printf("%c%c%c%n", firstChar,secondChar,thirdChar);
+
+                }
+
+            }
+
+        }
+         */
+/*
+Escaping Characters
+Escaping sequences are:
+Represent a special character like ', " or \n (new line)
+Represent system characters (like the [TAB] character \t)
+
+Commonly used escaping sequences are:
+\'  for single quote   - искам да принтирам '
+\"  for double quote   - искам да принтирам "
+\\  for backslash      - искам да принтирам \
+\n  for a new line
+/*
+
+\ for denoting any other Unicode symbol u-> uXXX, показваше ми грешка, вместо uXXXX
+*//*
+char symbol = 'a'; // An ordinary character
+symbol = '\u006F'; // Unicode character code in a
+                   // hexadecimal format (letter 'o')
+symbol = '\u8449'; // 葉 (Leaf in Traditional Chinese)
+symbol = '\''; // Assigning the single quote character
+symbol = '\\'; // Assigning the backslash character
+symbol = '\n'; // Assigning new line character
+symbol = '\t'; // Assigning TAB character
+symbol = "a";  // Incorrect: use single quotes! symbol = 'a';
+*/
+        /*
+
+The String Data Type
+
+Has a default value null (no value)
+Strings are enclosed in quotes:
+String s = "Hello, JAVA";
+
+Strings can be concatenated
+Using the + operator
+
+String file = "C:\\Windows\\win.ini"; - The backslash \ is escaped by \\
+
+Format strings insert variable values by pattern:
+String firstName = "Emil";
+String lastName = "Vassilev";
+String fullName = String.format("%s %s", firstName, lastName);
+System.out.printf("Your full name is %s.", fullName);
+
+We can concatenate strings and numbers by the + operator:
+int age = 21;
+System.out.println("Hello, I am " + age + " years old");
+
+         */
+        /*
+byte centuries = 20;
+short years = 2000;
+int days = 730484;
+long hours = 17531616;
+
+System.out.printf("%d centuries = %d years = %d days = %d hours.",
+                                    centuries, years, days, hours)
+//20 centuries = 2000 years = 730484 days = 17531616 hours.
+
+         /*
+        integer literals:
+
+        The '0x' and '0X' prefixes mean a hexadecimal value
+        E.g. 0xFE, 0xA8F1, 0xFFFFFFFF
+
+        The 'l' and 'L' suffixes mean a long
+        E.g. 9876543L, 0L
+
+int hexa = 0xFFFFFFFF; //-1
+long number = 1L;      //1
+
+
          */
 
         /*Shabloni / Format Specifiers
@@ -621,16 +884,206 @@ String.format("|%30.5s|", "Hello World"); | Hello|
 
         //FUNDAMENTALS
 
-        //Array / Масиви
+        //Arrays / Масиви
+/*
+String[] stringArr = scanner.nextLine().split("\\s+");
+
+int[] integerArr = Arrays .stream(scanner.nextLine().split("\\s+")) .mapToInt(Integer::parseInt) .toArray();
+
+double[] doubleArr = Arrays .stream(scanner.nextLine().split("\\s+")) .mapToDouble(Double::parseDouble) .toArray();
+ */
+ // масив - последователност от елементи
+        //0 1 2 3 4 - масив с 5 елемента. array.length = 5
+        //5 6 5 7 8
 
         /*how to create new array in java
 There are several ways to create a new array in Java. Here are a few examples:
 
-Using the new keyword:
-int[] myArray = new int[5]; // creates an array of 5 integers
+Allocating an array of 5 integers
+double[] numbers = new double[5];
+String[] input = new String[5];
+String[] input = {
+"Monday",
+"Tuesday",
+"Sunday"
+};
+input[0] = "Monday";
+int[] numbers = {
+1,2,3,4,5
+};
+int[] numbers = new int[5]; // creates an array of 5 integers, масив от 5 елемента
+//0 1 2 3 4 - масив с 5 елемента.
+//0 0 0 0 0
+array.length = 5
+Assigning values to the array elements
+for (int i = 0; i < numbers.length; i++)
+  numbers[i] = 1;
+/0 1 2 3 4 - масив с 5 елемента.
+//1 1 1 1 1
+Accessing array elements by index
+numbers[3] = numbers[1] + numbers[4];
+//0 1 2 3 4 - масив с 5 елемента.
+//1 1 1 2 1
+numbers[5] = 1; // ArrayIndexOutOfBoundsException
+
+//Read Array
+        int[] numbers = Arrays.stream(scan.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] numbers2 = Arrays.stream(scan.nextLine() //" 23 -2 321 87 42 90 -123"
+                        .split(" ")) //["23","-2","321","87","42","90","-123"]
+                .mapToInt(Integer::parseInt) //[23, -2, 321, 87, 42, 90, -123]
+                .toArray();
 
 Using an array literal:
 int[] myArray = {1, 2, 3, 4, 5}; // creates an array with the given values
+
+Reading Arrays from the Console
+First, read the array length from the console
+int n = Integer.parseInt(sc.nextLine());
+Next, create an array of given size n and read its elements:
+int[] numbers = new int[n];
+for (int i = 0; i < n; i++) {     //for (int i = 0; i < numbers.lenth; i++)
+  numbers[i] = Integer.parseInt(sc.nextLine());
+}
+
+how to read integer array
+int[] array = new int[2];
+array[0] = scan.nextInt();
+array[1] = scan.nextInt();
+
+Reading Array Values from a Single Line
+2 8 30 25 40 72 -2 44 56
+String values = sc.nextLine();
+String[] items = values.split(" ");
+int[] numbers = new int[items.length];
+
+for (int i = 0; i < items.length; i++)
+ numbers[i] = Integer.parseInt(items[i]);
+
+Shorter: Reading Array from a Single Line
+Read an array of integers using functional programming:
+String inputLine = sc.nextLine();
+String[] items = inputLine.split(" ");
+String[] items = scan.nextLine.split(" ");    - чета, разделям по спейс и пълня масива
+int[] numbers = Arrays.stream(items)
+  .mapToInt(e -> Integer.parseInt(e)).toArray();
+
+int[] numbers = Arrays
+ .stream(sc.nextLine().split(" "))          -> манипулирай това, което въвеждам
+ .mapToInt(Integer::parseInt)            -> превърни го в числа
+ .toArray();                                -> числата ги сложи в масив
+
+To read the numbers in the format you provided as an array in Java, you could use a Scanner object to read each line of input and then use a loop to store each number in an array. Here is an example:
+
+scss
+Copy code
+Scanner sc = new Scanner(System.in);
+int[] arr = new int[3];
+for (int i = 0; i < arr.length; i++) {
+    arr[i] = sc.nextInt();
+}
+You can then access the individual elements of the array using the indices, for example, arr[0] would give you the first number in the list (3).
+
+ double[] numbers = Arrays
+ .stream(sc.nextLine().split(" "))
+ .mapToDouble(Double::parseDouble)
+ .toArray();
+
+ int[] numbers = Arrays
+ .stream(sc.nextLine().split(" "))
+ .mapToInt(e -> Integer.parseInt(e)).toArray();
+
+String[] input = scan.nextLine().split(" ");
+
+ String[] input = Arrays
+ .stream(sc.nextLine().split(" "))          -> манипулирай това, което въвеждам
+ .toArray();                                -> сложи въведеното в масив
+
+String[] input = Arrays
+ .stream(sc.nextLine().split("\\+s "))      -> манипулирай това, което въвеждам, сплит по 1 или няколко спейса
+ .toArray();                                -> сложи въведеното в масив
+
+
+how to sort integer array in ascending order and print the result:
+
+int[] output = { 3, 87, 2, 90};
+
+Arrays.sort(output);
+
+        for (int i = 0; i < output.length; i++) {
+            System.out.println(output[i]);
+
+            result: 2, 3, 87, 90
+
+
+daniela topuzakova style of spliting into array
+for (int i = 1; i <= n; i++) {
+            String data = scan.nextLine();
+            String name = data.split("\\s+")[0];
+            int age = Integer.parseInt(data.split("\\s+")[1]);
+
+Printing Arrays On the Console
+String[] arr = {"one", "two"};
+// == new String [] {"one", "two"};
+// Process all array elements
+for (int i = 0; i < arr.length; i++) {
+   System.out.printf("arr[%d] = %s%n", i, arr[i]);
+}
+
+принтиране с for
+for (int i = 0; i < integerArr.length; i++) {
+System.out.print(integerArr[i] + " ");
+}
+
+Принтиране с foreach
+for (int item : integerArr) {
+System.out.print(item + " ");
+}
+
+Принтиране със String.join() – с този метод може да се принтира само String масив
+System.out.println(String.join(", ", numbersAsStringArr));
+
+
+Int масив със String.join() – трябва да създаден нов String[], в който да сложим елементите и да ги направим от числа в String
+int[] integerArr = Arrays.stream(scanner.nextLine().split("\\s+")) .mapToInt(Integer::parseInt).toArray();
+String[] numbersAsStringArr = new String[integerArr.length];
+for (int i = 0; i < integerArr.length; i++) {
+numbersAsStringArr[i] = String.valueOf(integerArr[i]);
+}
+System.out.println(String.join(", ", numbersAsStringArr));
+
+how to print array with every word on a single line
+System.out.println(String.join(System.lineSeparator(), array));
+test1
+test3
+test2
+
+Принтиране с replaceAll() – няма значение какъв е типът на данните в масива
+System.out.println(Arrays.toString(integerArr).replaceAll("[\\[\\]]", ""));
+
+Printing String array using String.join
+String[] input = {10, 20, 30};
+System.out.println(String.join(" ", input);     // works only for Strings
+Result 10 20 30
+System.out.println(String.join(", ", input);
+Result 10, 20, 30
+System.out.println(String.join(System.lineSeparator(), input);
+Result
+10
+20
+30
+
+Print an Array with Foreach
+int[] numbers = { 1, 2, 3, 4, 5 };
+for (int number : numbers) {
+   System.out.print(number + " ");
+}
+Result 1 2 3 4 5
+
+Print int array
+System.out.println(Arrays.toString(firstArray).replace("[", "").replace(",", "").replace("]",""));
+
+how to make array value to integer
+int finalNumber = Integer.parseInt(Integer.toString(numbers[0]));
 
 Using the Array class:
 int[] myArray = Array.newInstance(int.class, 5); // creates an array of 5 integers
@@ -640,6 +1093,26 @@ int[] originalArray = {1, 2, 3, 4, 5};
 int[] newArray = Arrays.copyOf(originalArray, originalArray.length);
 
 It is important to note that the size of an array in Java is fixed, once an array is created its size can't be changed.
+
+how to copy one smaller array into a bigger one
+int[] newArray = {1}; int[] newArray2 = {0,0}; how can i copy newArray into newArray 2 and get 1,0 as result
+There are a few ways to copy the elements of one array into another array in Java, one of them is using the System.arraycopy() method.
+
+Here's an example of how you could use this method to copy the elements of newArray into newArray2:
+
+scss
+Copy code
+int[] newArray = {1};
+int[] newArray2 = {0,0};
+System.arraycopy(newArray, 0, newArray2, 0, newArray.length);
+Alternatively, you can use a loop to copy the elements from one array to another array.
+
+css
+Copy code
+for(int i = 0; i < newArray.length; i++) {
+    newArray2[i] = newArray[i];
+}
+After copy newArray2 will be [1,0]
 
 You can also create multi-dimensional arrays in Java by adding one or more sets of square brackets after the type. For example:
 
@@ -658,6 +1131,14 @@ Also you can create an ArrayList which is not fixed size and you can add or remo
 ArrayList<Integer> myArray = new ArrayList<Integer>();
 It is important to note that the above example creates an empty ArrayList of integers, you can add elements to it using the add() method.
          */
+/*how to read and split string into array
+String items = "Tomatoes!Potatoes!Bread";
+String[] itemsArray = items.split("!");
+
+OR in one line
+
+String[] itemsArray = scanner.nextLine().split("!");
+ */
 
         /* Split by , whitespace, -:, ?
         String[] parts = input.split("[,\\s\\-:\\?]");
@@ -668,6 +1149,11 @@ It is important to note that the above example creates an empty ArrayList of int
         String commandName = command.split("\\: ")[0]; - \\: сплитва по символа :, а не по оператора :, така се получава допълнително празно място, иначе го няма и джъдж дава 0 точки
         String newValue = command.split("\\: ")[1];*/
 
+//int element = Integer.parseInt(command.split(" ")[1]);
+
+//String command = scam.nextLine();
+//if(command.contains("Add")){}
+
        /* how to read make String into Array
        String articleData = scan.nextLine();
 
@@ -675,14 +1161,30 @@ It is important to note that the above example creates an empty ArrayList of int
         String content = articleData.split(", ")[1];
         String author = articleData.split(", ")[2];*/
 
-        String[] commandParts = scan.nextLine().split("\\|"); //how to separate via | -Gold|Silver|Wood
+      //  String[] commandParts = scan.nextLine().split("\\|"); //how to separate via | -Gold|Silver|Wood
 
-        //Read Array
-        int[] numbers = Arrays.stream(scan.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int[] numbers2 = Arrays.stream(scan.nextLine() //" 23 -2 321 87 42 90 -123"
-                        .split(" ")) //["23","-2","321","87","42","90","-123"]
-                .mapToInt(Integer::parseInt) //[23, -2, 321, 87, 42, 90, -123]
-                .toArray();
+        /*how to read string, then turn it into array
+        String commands = scan.nextLine();
+
+        while(!commands.equals("Go Shopping!")){
+
+            String[] commandParts = commands.split(" ");
+
+            String command = commandParts[0];
+            String grocery = commandParts[1];
+         */
+
+        /*how to add element to array and increase its length, как да добавим нов елемент към масив и удължим дължината му
+        String newChest = itemParts[i] + " " + String.join(" ", treasureChest);
+                            treasureChest = newChest.split(" ");
+
+                            or
+
+                            String[] tempChest = new String[treasureChest.length + 1];
+                            tempChest[0] = commandParts[i];
+                            System.arraycopy(treasureChest, 0, tempChest, 1, treasureChest.length);
+                            treasureChest = tempChest;
+         */
 
         /*
         int fieldSize = Integer.parseInt(scanner.nextLine());
@@ -718,6 +1220,170 @@ It is important to note that the above example creates an empty ArrayList of int
         array[i] = Integer.parseInt(input[i]);
         }
         System.out.println(Array.toString(array));
+         */
+
+        /* String[] groceriesList= scan.nextLine().split("!"); how can i add a new item at the start of the list and make the list longer with 1 more position in java
+There are several ways to add a new item at the start of an array and make the list longer with one more position in Java. One way is to create a new array that is one position larger than the original array, then copy the elements of the original array into the new array starting at index 1. Finally, you can assign the new item to the first position of the new array. Here's an example:
+
+Copy code
+import java.util.Scanner;
+
+Scanner scan = new Scanner(System.in);
+String[] groceriesList = scan.nextLine().split("!");
+
+// create a new array one position larger than the original array
+String[] newGroceriesList = new String[groceriesList.length + 1];
+
+// add the new item at the first position of the new array
+newGroceriesList[0] = "Carrots";
+
+// copy the elements of the original array into the new array starting at index 1
+System.arraycopy(groceriesList, 0, newGroceriesList, 1, groceriesList.length);
+
+// make the original array reference the new array
+groceriesList = newGroceriesList;
+Another way to do this is by using the ArrayList class from the java.util package which allows to add elements at the start of the list and the list will automatically increase in size.
+
+Copy code
+import java.util.ArrayList;
+ArrayList<String> groceriesList = new ArrayList<String>();
+groceriesList.add(0,"Carrots"); // add at start of the list
+Please note that the second method is more efficient as it does not require to copy all elements from the old array to the new array.
+
+         */
+        /*how to remove element from array
+        If you want to use a foreach loop and don't want to use a List, one way to remove an element from an array is to create a new array and copy all elements except the one you want to remove.
+
+Copy code
+String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+int counter = 0;
+for (String item : groceriesList) {
+    if (!item.equals("Potatoes")) {
+        counter++;
+    }
+}
+
+String[] newGroceriesList = new String[counter];
+counter = 0;
+for (String item : groceriesList) {
+    if (!item.equals("Potatoes")) {
+        newGroceriesList[counter] = item;
+        counter++;
+    }
+}
+groceriesList = newGroceriesList;
+In this example, we first use a foreach loop to count the number of elements in the new array that are not "Potatoes". Then, we create a new array with that size, and use a second foreach loop to copy all elements of the original array that are not "Potatoes" to the new array. Finally, we assign the new array to the original array.
+
+Please note that this method is less efficient than using an ArrayList or an Iterator, as it requires to copy all elements from the old array to the new array, also you will end up with a new array, which is not always what you want.
+         */
+
+        /*how to remove element from arraylist
+        String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+for (int i = 0; i < groceriesList.length; i++) {
+    if (groceriesList[i].equals("Potatoes")) {
+        for (int j = i; j < groceriesList.length - 1; j++) {
+            groceriesList[j] = groceriesList[j + 1];
+        }
+        break;
+    }
+}
+
+         */
+
+        /*how to remove item and place it at the back of the array
+        String[] groceriesList = {"Tomatoes","Potatoes","Bread"}; how can i remove element from the list and place it at the end of the array without using list
+If you want to remove an element from the middle of an array and place it at the end of the array without using a List, you can use a for loop and a counter variable to achieve this. Here's an example:
+
+Copy code
+String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+String itemToMove = "Potatoes";
+int counter = 0;
+
+for (int i = 0; i < groceriesList.length; i++) {
+    if (!groceriesList[i].equals(itemToMove)) {
+        groceriesList[counter] = groceriesList[i];
+        counter++;
+    }
+}
+groceriesList[counter] = itemToMove;
+In this example, we first use a for loop to iterate through the elements of the original array, and copy all elements that are not equal to the element you want to remove (in this example "Potatoes") to the new array. We increment the counter variable each time an element is copied. After the for loop, the element to move (in this case "Potatoes") is added to the end of the array at position counter.
+
+Please note that this method is less efficient than using an ArrayList or an Iterator, as it requires to copy all elements from the old array to the new array.
+
+Also, you can use this method with a for-each loop and a variable to keep track of the element to move:
+
+Copy code
+String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+String itemToMove = "";
+int counter = 0;
+
+for (String item : groceriesList) {
+    if (!item.equals("Potatoes")) {
+        groceriesList[counter] = item;
+        counter++;
+    } else {
+        itemToMove = item;
+    }
+}
+groceriesList[counter] = itemToMove;
+This will give you the same result.
+
+Please note that this method is less efficient than using an ArrayList or an Iterator, as it requires to copy all elements from the old array to the new array.
+
+If you want to do this in one pass you can use a while loop:
+
+Copy code
+String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+String itemToMove = "Potatoes";
+int counter = 0;
+int index = 0;
+while (index < groceriesList.length) {
+    if (!groceriesList[index].equals(itemToMove)) {
+        groceriesList[counter] = groceriesList[index];
+        counter++;
+    } else {
+        itemToMove = groceriesList[index];
+    }
+    index++;
+}
+groceriesList[counter] = itemToMove;
+This will also give you the same result.
+         */
+        /*how to make array to list and list to array back again and remove an element
+        import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+List<String> list = new ArrayList<>(Arrays.asList(groceriesList));
+
+for (String item : list) {
+    if (item.equals("Potatoes")) {
+        list.remove(item);
+    }
+}
+groceriesList = list.toArray(new String[0]);
+In this example, we first convert the array to a List using the Arrays.asList() method, then we use a foreach loop to iterate through the elements of the List and remove an element using the remove() method. Finally, we convert the List back to an array using the toArray() method.
+
+Please note that this method will create a new array and copy all elements except the one you want to remove, also you can use Iterator as I mentioned in the previous answer to avoid the ConcurrentModificationException.
+         */
+
+        /*how to remove element from array with for loop
+        String[] groceriesList = {"Tomatoes","Potatoes","Bread"};
+int counter = 0;
+for (int i = 0; i < groceriesList.length; i++) {
+    if (!groceriesList[i].equals("Potatoes")) {
+        groceriesList[counter] = groceriesList[i];
+        counter++;
+    }
+}
+
+String[] newGroceriesList = new String[counter];
+System.arraycopy(groceriesList, 0, newGroceriesList, 0, counter);
+In this example, we first create a variable called counter that is used to keep track of the number of elements in the new array. We then use a for loop to iterate through the elements of the original array. If the current element is not "Potatoes", we copy it to the new array at the position represented by the counter variable, then increment the counter variable. After the for loop, we create a new array with the size of counter variable, and copy all the elements of the original array to the new array. Finally, we assign the new array to the original array.
+
+Please note that this method is less efficient than using an ArrayList or an Iterator, as it requires to copy all elements from the old array to the new array.
+
          */
 
         /*how to remove blank spaces white spaces in String
@@ -877,7 +1543,7 @@ class Main
 }
          */
 
-        //string to char array
+        /*string to char array
         String name = scan.nextLine(); //->journaldev
         char[] characters = name.toCharArray(); //->j o u r n a l d e v
         char[] charactersShort = new char[7];
@@ -897,6 +1563,30 @@ class Main
         System.out.println(Array.toString(array));
          *///result String "2345", Array[2 3 4 5]
 
+        /*how to print array
+        how to print this array
+In Java, you can use a for loop to iterate through an array and print each element. For example, if you have an array called myArray, you can use the following code to print all the elements of the array:
+
+System.out.println(Arrays.toString(line).replace("[", "").replace(",", "").replace("]", ""));
+
+Copy code
+for (int i = 0; i < myArray.length; i++) {
+    System.out.println(myArray[i]);
+}
+You can also use for-each loop to print the array element
+
+Copy code
+for (int element : myArray) {
+    System.out.println(element);
+}
+Another way to print the array is to use Arrays.toString() method.
+
+Copy code
+System.out.println(Arrays.toString(myArray));
+You can use any of the above approach to print the array, depending on your specific requirements.
+
+         */
+
       /*  int index = 0; - how to start from next point every time
         for (int element: array) {
             index ++;
@@ -907,7 +1597,44 @@ class Main
                 }
             }*/
 
-// how to make String to String Array and then take the first part of the array to use is as command
+/*how to make single string to string array
+
+String input = "bread";
+
+// create a new string array with one element and assign the input string to it
+String[] words = new String[]{ input };
+
+// print the contents of the string array
+for (String word : words) {
+    System.out.println(word);
+}
+
+ALTERNATIVE
+
+String input = "bread";
+
+// convert the input string to a char array
+char[] chars = input.toCharArray();
+
+// create a new string array with the same length as the char array
+String[] words = new String[chars.length];
+
+// copy each character from the char array to the string array
+for (int i = 0; i < chars.length; i++) {
+    words[i] = String.valueOf(chars[i]);
+}
+
+// print the contents of the string array
+for (String word : words) {
+    System.out.println(word);
+}
+In this example, the toCharArray method converts the input string to a char array containing the characters 'b', 'r', 'e', and 'a'. The for loop copies each character from the char array to a new string array words with the same length, by using the String.valueOf method to convert each character to a string. The resulting string array words contains four elements: "b", "r", "e", and "a". The second for loop prints the contents of the string array.
+
+Note that in this example, we create a new string array with the same length as the char array, because each element of a string array must be a string. If you only need to iterate over the characters of the string, you can simply use the char array returned by the toCharArray method.
+
+ */
+
+/*how to make String to String Array and then take the first part of the array to use is as command
         String commands = scan.nextLine();
 
         while (!commands.equals("end")) {
@@ -970,7 +1697,7 @@ public class StringtoCharArray {
             */
 
 
-            //how to get number from an array
+            /*how to get number from an array
             int index1 = Integer.parseInt(commandParts[1]); //-> 3
             int element1 = numbers2[index1]; //the number that is on index 3 in the array ->87
             int index2 = Integer.parseInt(commandParts[2]); // 4
@@ -1032,7 +1759,7 @@ public class StringtoCharArray {
             //1 2
             //1
 
-            //how to sort the numbers within an array
+            /*how to sort the numbers within an array
             Arrays.sort(numbers);
 
             //how to Print Array
@@ -1047,7 +1774,7 @@ public class StringtoCharArray {
                 System.out.println(numbers[index]);
             }
 
-             */
+             *//*
             System.out.println(Arrays.toString(numbers));
         }
 
@@ -1071,8 +1798,136 @@ This way you can check if the string is a number before trying to parse it to in
          */
 
 
-    }
-    //Methods
+
+    //Methods / Методи
+/*
+
+1. Void Methods / извършва действие / напр. печат/принтира нещо
+
+public static void main(String[] args) {
+String text = scan.nextLine();
+  printText();
+}
+public static void printText(String text) {
+  System.out.println(text);
+}
+
+
+Another Example
+
+public static void main(String[] args) {
+  printNumbers(5, 10);
+}
+static void printNumbers(int start, int end) {
+  for (int i = start; i <= end; i++) {
+    System.out.printf("%d ", i);
+  }
+}
+
+Another example
+public static void printStudent(String name, int age, double grade) {
+    System.out.printf("Student: %s; Age: %d, Grade: %.2f\n",
+        name, age, grade);
+}
+
+Another Example
+public static void main(String[] args) {
+  printSign(Integer.parseInt(sc.nextLine()));
+}
+
+public static void printSign(int number) {
+  if (number > 0)
+    System.out.printf("The number %d is positive.", number);
+  else if (number < 0)
+    System.out.printf("The number %d is negative.", number);
+  else
+    System.out.printf("The number %d is zero.", number);
+}
+
+Another Example
+public static void main(String[] args) {
+  printInWords(Double.parseDouble(sc.nextLine()));
+}
+public static void printInWords(double grade) {
+  String gradeInWords = "";
+  if (grade >= 2 && grade <= 2.99)
+    gradeInWords = "Fail";
+  //TODO: make the rest
+  System.out.println(gradeInWords);
+}
+
+
+2. Return Methods / връщат стойност
+
+public static void main(String[] args) {
+ readFullName();
+}
+public static String readFullName(Scanner sc) {
+  String firstName = sc.nextLine();
+  String lastName = sc.nextLine();
+  return firstName + " " + lastName;
+}
+
+Another Example
+public static void main(String[] args) {
+  double width = Double.parseDouble(sc.nextLine());
+  double height = Double.parseDouble(sc.nextLine());
+  double area = calcRectangleArea(width, height);
+  System.out.printf("%.0f%n",area);
+}
+public static double calcRectangleArea(double width,
+                                       double height) {
+  return width * height;
+}
+
+Another Example
+public static void main(String[] args) {
+  String inputStr = sc.nextLine();
+  int count = Integer.parseInt(sc.nextLine());
+  System.out.println(repeatString(inputStr, count));
+}
+private static String repeatString(String str, int count) {
+  String result = "";
+  for (int i = 0; i < count; i++) result += str;
+  return result;
+}
+
+
+Another Example
+public static double mathPower(double number, int power) {
+  double result = 1;
+  for (int i = 0; i < power; i++)
+    result *= number;
+  return result;
+}
+
+VALUE TYPES
+
+public static void main(String[] args) {
+   int num = 5;
+   increment(num, 15);
+   System.out.println(num); -> num == 5
+}
+
+public static void increment(int num, int value) {
+   num += value; -> num == 20
+}
+
+REFERENCE TYPES
+public static void main(String[] args) {
+  int[] nums = { 5 };
+  increment(nums, 15);
+  System.out.println(nums[0]); -> nums[0] == 20
+}
+
+public static void increment(int[] nums, int value) {
+  nums[0] += value; -> nums[0] == 20;
+}
+
+
+*/
+
+        /*
     public static void printDataStudent(String name, int age, double grade){
         System.out.printf("Student: %s; Age: %d, Grade: %.2f%n", name, age, grade);
     }
@@ -1133,9 +1988,48 @@ public static void printNXN (int num){
     3 3 3
  */
 
-    //LISTS//
+/*multidimentional array
+String input = scan.nextLine();
 
+        String[] rooms = input.split("\\|");
+        String[][] roomsParts = new String[rooms.length][2];
+        for (int i = 0; i < rooms.length; i++) {
+            String[] parts = rooms[i].split(" ");
+            roomsParts[i] = parts;
+        }
+          for (int i = 0; i < roomsParts.length; i++) {
+            String roomsName = roomsParts[i][0];
+            String roomsValue = roomsParts[i][1];
+
+        result:
+        0 - "rat" "10"
+        1 - "bat" "20"
+        2 - "potion" "10"
+ */
+
+    //LISTS//Листове
+
+//String, Integer, Double, Char, Boolean
+
+//List<Boolean> isValid = new ArrayList<>();
+//isValid.add(true);
+//isValid.add(false);
     /*
+
+List<String> stringList = Arrays.stream(scanner.nextLine().split("\\s+")).collect(Collectors.toList());
+
+List<Integer> integerList = Arrays .stream(scanner.nextLine().split("\\s+")) .map(Integer::parseInt) .collect(Collectors.toList());
+List<Integer> integers = Arrays.stream(scan.nextLine().split(" "))
+                .map(Integer::parseInt).sorted(Collections.reverseOrder()).collect(Collectors.toList());
+
+List<Double> doubleList = Arrays .stream(scanner.nextLine().split("\\s+")) .map(Double::parseDouble) .collect(Collectors.toList());
+
+
+
+
+
+    List<Double> grades = new ArrayList<>(Arrays.as:ist(5.6, 3.4, 6.0));
+
     List<String> names = new ArrayList<>();
     //Create a list of strings
     names.add("Peter");
@@ -1150,8 +2044,8 @@ public static void printNXN (int num){
     /*
     List<Integer> nums = new ArrayList<>();
 	    Arrays.asList(10, 20, 30, 40, 50, 60));
-        nums.remove(2);
-        nums.remove(Integer.valueOf(40));
+        nums.remove(2); ->index 2
+        nums.remove(Integer.valueOf(40)); ->element 40
         nums.add(100);
         nums.add(0, -100);
         for (int i = 0; i < nums.size(); i++)
@@ -1159,16 +2053,26 @@ public static void printNXN (int num){
         result-> -100 10 20 50 60 100
      */
 
-    /*
-    List<E> holds a list of elements (like array, but extendable)
+    /*методи
+    List<E> test holds a list of elements (like array, but extendable)
     Provides operations to add / insert / remove / find elements:
-    size() – number of elements in the List<E>
-    add(element) – adds an element to the List<E>
-    add(index, element) – inserts an element to given position
-    remove(element) – removes an element (returns true / false)
-    remove(index) – removes element at index
-    contains(element) – determines whether an element is in the list
-    set(index, item) – replaces the element at  the given index
+    test.size() – number of elements in the List<E>
+    test.size() - 1 - the last element in the List<Е>
+    test.add(element) – adds an element to the List<E>
+    test.add(index, element) – inserts an element to given position
+    test.addAll(numList) - може да добавим всички елементи от една колекция в друга. Добавят се в края на колекцията.
+    test.remove(element) – removes an element (returns true / false) -> names.remove("Peter");
+    test.remove(index) – removes element at index -> names.remove(2);
+    test.removeIf(number -> number < 0) - removes element,if the element answers a condition, remove number, if number is < 0,so negative
+    test.removeAll(Arrays.asList(9)); - removes all elements that are equal to element 9
+    test.remove(Integer.valueOf(element)) - премахва елемент, ако съществува в листа. Ако елемента е примитивен тип данни (double, int), чрез ValueOf() трябва да го превърнем в референтен тип данни, за да знае компилатора, че това е елемент. Ако го оставим int компилатора ще припознае числото като индекс, а не като елемент от листа. Ако елемента не съществува няма да ни даде ексепшън, просто ще игнорира командата.
+    test.contains(element) – determines whether an element is in the list, връща булева стойност: true – ако елемента се съдържа в листа
+    test.set(index, item) – replaces the element at  the given index
+    test.get(index) - takes the element at the given index
+    test.indexOf(element) - връща цяло число – Индекс, на който се намира елемента
+    test.isEmpty - връща булева стойност: true – при празен лист, с 0 елемента
+    Collections.sort(test) - сортираме елементите в листа
+    Collections.reverse(integerList) – обръщаме реда на елементите в листа, независимо от това дали са сортирани или не.
      */
 
     //READING LIST FROM CONSOLE
@@ -1185,26 +2089,334 @@ public static void printNXN (int num){
 
     /* reading direkt direct without to read String first
     List<String> travel = Arrays.stream(scan.nextLine().split("")).collect(Collectors.toList());
+
+    Milk!Pepper!Salt!Water!Banana
+    List<String> travel = Arrays.stream(scan.nextLine().split("!")).collect(Collectors.toList());
      */
+
+    /*how to see if a list contains an item with for each loop
+    for (String item : groceriesList){
+                        if(groceriesList.contains(item)){
+                            isInTheList = true;
+                        }
+     */
+//String command = scan.nextLine();
+//if(command.startsWith("contains"))
+//if(command.contains("Add"))
+//if(command.equals("Add"))
 
     /*Reading List Values from a Single Line
     2 8 30 25 40 72 -2 44 56
-    String values = sc.nextLine();
+    List<Integer> = Arrays.stream(scan.nextLine().split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+    List<Double> = Arrays.stream(scan.nextLine().split(" ")).map(Double::parseDouble).collect(Collectors.toList());
+    List<String> = Arrays.stream(scan.nextLine().split(" ")).collect(Collectors.toList());
+
+    String values = scan.nextLine();
     List<String> items = Arrays.stream(values.split(" "))           ->правиме елементите поток от данни
 		.collect(Collectors.toList());                              -> Convert a collection into List, потока от данни го нареждаме в лист от стрингове
     List<Integer> nums = new ArrayList<>();                         ->парсваме елементите към цяло число, така получаваме стринговете в листа да станат числа
     for (int i = 0; i < items.size(); i++)
      nums.add(Integer.parseInt(items.get(i)));                      ->взимам стринг от листа items, парсвам го към цяло число, тоест го правя число и го добавям в новия List nums
 
-        //Съкратен вариант на горното
+        //Съкратен вариант на горното how to read integers into list
     List<Integer> items = Arrays.stream(values.split(" "))
     .map(Integer::parseInt).collect(Collectors.toList());
+     */
+    /*
+    List<Integer> integers = Arrays.stream(scan.nextLine().split(" "))                                    //how to read integers into list
+                .map(Integer::parseInt).collect(Collectors.toList());
+     */
+/*PRINTING LISTS how to print list
+System.out.println(String.join(", ", list);
+
+принтиране с for
+for (int i = 0; i < integerList.size(); i++) {
+System.out.print(integerList.get(i) + " ");
+}
+
+Принтиране с foreach
+for (int item : integerList) {
+System.out.print(item + " ");
+}
+
+Принтиране със String.join() – с този метод може да се принтира само String колекция
+System.out.println(String.join(", ", stringList));
+
+Int лист със String.join() – трябва да създаден нов List<String>, в който да сложим елементите и да ги направим от числа в String
+List<Integer> integerList = Arrays .stream(scanner.nextLine().split("\\s+")).map(Integer::parseInt) .collect(Collectors.toList());
+List<String> stringList = new ArrayList<>(integerList.size());
+for (int i = 0; i < integerList.size(); i++) {
+stringList.add(String.valueOf(integerList.get(i)));
+}
+System.out.println(String.join(", ", stringList));
+
+Принтиране с replaceAll() – няма значение какъв е типът на данните в листа
+System.out.println(integerList.toString().replaceAll("[\\[\\],]", ""));
+
+List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 6, 12, 34, 56, 87));
+System.out.println(numbers.toString()
+.replace("[", "")
+.replace("]", ""));
+ */
+/*
+SORTING LISTS, how to sort lists
+List<Integer> numbers = new ArrayList<>(Arrays.asList(52, -5, 124, 2, 45, 23));
+Collections.sort(numbers);
+System.out.println(numbers.toString()); -> [-5, 2,...]
+Collections.reverse(numbers);
+System.out.println(numbers.toString()); -> [124, 52,...]
+System.out.println(numbers.toString()
+.replace("[", "")
+.replace("]", "")
+.replaceAll(",", ""));-> -5 2 23 45 52 124
+OR
+for(int number : numbers){
+system.out.print(number + " ");
+
+*/
+    /*
+    how can i create array for this rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000 in java
+You can create an array in Java by using the String.split() method to split the string into individual elements, then storing each element in an array. Here's an example of how you might create an array for the string you provided:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+String[] items = input.split("\\|");
+You can then access the individual elements of the array using the array index, for example items[0] would give you the first element "rat 10" in this case.
+
+Alternatively, you can also use java's ArrayList class to achieve the same.
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+List<String> items = new ArrayList<>(Arrays.asList(input.split("\\|")));
+You can then access the elements of the arraylist using the index, for example items.get(0) would give you the first element "rat 10" in this case.
+
+
+
+
+emil vasilev
+i want to split rat 10 into rat and 10
+You can use the String.split() method to split the string into two parts, the first part being "rat" and the second part being "10". Here's an example of how you might split the string "rat 10":
+
+Copy code
+String input = "rat 10";
+String[] parts = input.split(" ");
+String itemName = parts[0]; // "rat"
+String itemValue = parts[1]; // "10"
+You can also use String.substring() method to separate the string into two parts, Here's an example of how you might do it:
+
+Copy code
+String input = "rat 10";
+String itemName = input.substring(0,input.indexOf(" ")); // "rat"
+String itemValue = input.substring(input.indexOf(" ")+1); // "10"
+You can then use the variables itemName and itemValue to store the separated values.
+
+You can use the above methods to separate the elements of the array or arraylist created earlier, if you have multiple elements in the array/arraylist.
+
+Copy code
+for (String item : items) {
+    String[] parts = item.split(" ");
+    String itemName = parts[0];
+    String itemValue = parts[1];
+    // do something with the item name and value
+}
+or
+
+Copy code
+for (String item : items) {
+    String itemName = item.substring(0,item.indexOf(" "));
+    String itemValue = item.substring(item.indexOf(" ")+1);
+    // do something with the item name and value
+}
+
+
+
+emil vasilev
+i want to split it while i am reading the list rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000
+You can use the String.split() method to split the string into individual elements, then use a loop to iterate over each element and split it again into two parts, the first part being the item name and the second part being the item value. Here's an example of how you might do it:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+String[] items = input.split("\\|");
+for (String item : items) {
+    String[] parts = item.split(" ");
+    String itemName = parts[0];
+    String itemValue = parts[1];
+    // do something with the item name and value
+}
+Similarly, You can use String.substring() method to separate the string into two parts, Here's an example of how you might do it:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+String[] items = input.split("\\|");
+for (String item : items) {
+    String itemName = item.substring(0,item.indexOf(" "));
+    String itemValue = item.substring(item.indexOf(" ")+1);
+    // do something with the item name and value
+}
+In both cases, the loop iterates over each element of the items array, and the itemName and itemValue variables are used to store the separated values for each element.
+
+You can also use ArrayList instead of array, the code will look like this:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+List<String> items = new ArrayList<>(Arrays.asList(input.split("\\|")));
+for (String item : items) {
+    String[] parts = item.split(" ");
+    String itemName = parts[0];
+    String itemValue = parts[1];
+    // do something with the item name and value
+}
+or
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+List<String> items = new ArrayList<>(Arrays.asList(input.split("\\|")));
+for (String item : items) {
+    String itemName = item.substring(0,item.indexOf(" "));
+    String itemValue = item.substring(item.indexOf(" ")+1);
+    // do something with the item name and value
+}
+You can then use the variables itemName and itemValue to store the separated values.
+
+If you don't have a list that includes the parts of the input string, you can create one using an ArrayList or any other suitable data structure. Here's an example of how you might do it using an ArrayList:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+String[] items = input.split("\\|");
+List<String[]> itemPartsList = new ArrayList<>();
+
+for (String item : items) {
+    String[] parts = item.split(" ");
+    itemPartsList.add(parts);
+}
+You can iterate over the list to access the item name and value
+
+Copy code
+for(String[] item: itemPartsList){
+    String itemName = item[0];
+    String itemValue = item[1];
+    // do something with the item name and value
+}
+You can also use a 2D array instead of ArrayList, the code will look like this:
+
+Copy code
+String input = "rat 10|bat 20|potion 10|rat 10|chest 100|boss 70|chest 1000";
+String[] items = input.split("\\|");
+String[][] itemPartsArray = new String[items.length][2];
+
+for (int i=0; i<items.length; i++) {
+    String[] parts = items[i].split(" ");
+    itemPartsArray[i] = parts;
+}
+You can iterate over the array to access the item name and value
+
+Copy code
+for(String[] item: itemPartsArray){
+    String itemName = item[0];
+    String itemValue = item[1];
+    // do something with the item name and value
+}
+In both cases, the variable itemPartsList or itemPartsArray holds the parts of the input string, with each element of the list/array representing one item from the input string, and each element being an array containing the item name and value.
+
+    how can i access the elements into itemPartsArray
+You can access the elements of the itemPartsArray 2D array using the array indices.
+For example, if you want to access the first element of the array, you would use the indices itemPartsArray[0][0] for item name and itemPartsArray[0][1] for item value.
+
+Here's an example of how you might use a loop to iterate over the elements of the itemPartsArray and access the item name and value:
+
+Copy code
+for (int i = 0; i < itemPartsArray.length; i++) {
+    String itemName = itemPartsArray[i][0];
+    String itemValue = itemPartsArray[i][1];
+    // do something with the item name and value
+}
+You can also use enhanced for loop (for-each) to iterate over the elements of the itemPartsArray and access the item name and value:
+
+Copy code
+for (String[] item : itemPartsArray) {
+    String itemName = item[0];
+    String itemValue = item[1];
+    // do something with the item name and value
+}
+In both cases, the loop iterates over each element of the itemPartsArray and the itemName and itemValue variables are used to store the item name and value for each element.
+
+    Scanner scan = new Scanner(System.in);
+
+        String input = scan.nextLine();
+        String[] rooms = input.split("\\|");
+        List<String[]> roomsParts = new ArrayList<>();
+
+        for(String item : rooms){
+            String[] parts = item.split(" ");
+            roomsParts.add(parts);
+        } how to access here the parts of roomParts list
+Once you have stored the parts of the input string in the roomsParts list, you can access the individual elements of the list using the list index.
+For example, if you want to access the first element of the list, you would use the index roomsParts.get(0)[0] for room name and roomsParts.get(0)[1] for room value.
+
+Here's an example of how you might use a loop to iterate over the elements of the roomsParts list and access the room name and value:
+
+Copy code
+for (int i = 0; i < roomsParts.size(); i++) {
+    String roomName = roomsParts.get(i)[0];
+    String roomValue = roomsParts.get(i)[1];
+    // do something with the room name and value
+}
+You can also use enhanced for loop (for-each) to iterate over the elements of the roomsParts list and access the room name and value:
+
+Copy code
+for (String[] room : roomsParts) {
+    String roomName = room[0];
+    String roomValue = room[1];
+    // do something with the room name and value
+}
+In both cases, the loop iterates over each element of the roomsParts list and the roomName and roomValue variables are used to store the room name and value for each element.
+
+You can use the above code snippet after reading the input from the user using the scanner class as you have already shown in your question.
      */
 
     //четене и сортиране първо по големина от най-малко към най-голямо след което се обръща реда на подреждане от най-голямо към най-малко
     //reading and sorting first from ascending to descending (small to big number) then reversed from descending to ascending (big to small number)
-    /*List<Integer> integers = Arrays.stream(scan.nextLine().split(" "))
+    /*List<Integer> integers = Arrays.stream(scan.nextLine().split(" "))                                    //how to read integers into list
                 .map(Integer::parseInt).sorted(Collections.reverseOrder()).collect(Collectors.toList());
+
+/*
+i have the following list 10@10@10@2, how can i decrease the second number 10 by 2
+You can use the set() method to replace the element at a specific index in the list with a new value. Here's an example of how you can decrease the second element (index 1) in the list by 2:
+
+Copy code
+List<Integer> integers = Arrays.asList(10, 10, 10, 2);
+integers.set(1, integers.get(1) - 2);
+You can also use the List.set() method along with the Arrays.stream() and Collectors.toList() method to decrease the second element in the list
+
+Copy code
+List<Integer> integers = Arrays.stream(scan.nextLine().split("@"))
+                               .mapToInt(Integer::parseInt)
+                               .boxed()
+                               .collect(Collectors.toList());
+integers.set(1, integers.get(1) - 2);
+Alternatively, you can use the List.set() along with the Stream.map() method to replace the element at a specific index
+
+Copy code
+List<Integer> integers = Arrays.stream(scan.nextLine().split("@"))
+                               .mapToInt(Integer::parseInt)
+                               .boxed()
+                               .collect(Collectors.toList());
+integers.set(1, integers.get(1) - 2);
+The above code will decrease the second element in the list by 2.
+Alternatively, if you want to use the Stream.map() method to update the element at a specific index in the list, you can use the List.set() method within the lambda expression passed to the Stream.map() method. Here is an example:
+
+Copy code
+List<Integer> integers = Arrays.stream(scan.nextLine().split("@"))
+                               .mapToInt(Integer::parseInt)
+                               .boxed()
+                               .collect(Collectors.toList());
+
+List<Integer> updatedIntegers = IntStream.range(0, integers.size())
+                                         .mapToObj(i -> i == 1 ? integers.set(i, integers.get(i) - 2) : integers.get(i))
+                                         .collect(Collectors.toList());
+This code creates a new List<Integer> named updatedIntegers, where the second element (index 1) in the list is decreased by 2.
+     */
+
 
 /* how to read and print characters in java
 import java.util.List;
@@ -1308,9 +2520,87 @@ public class Main {
                         targets.subList(radiusStart, radius+1).clear(); - взима подсписък с начало 1 трие 1,2,3,4,5 (радуис + 1, понеже, явно подсписъка не е вкл последното число)
      */
 
+    /*remove element from list with for each
+    In Java, you can use the foreach loop to iterate through the elements of an ArrayList and remove an element using the remove() method of the Iterator class. Here's an example:
+
+Copy code
+import java.util.ArrayList;
+import java.util.Iterator;
+
+ArrayList<String> groceriesList = new ArrayList<String>();
+groceriesList.add("Tomatoes");
+groceriesList.add("Potatoes");
+groceriesList.add("Bread");
+
+for (String item : groceriesList) {
+    if (item.equals("Potatoes")) {
+        groceriesList.remove(item);
+    }
+}
+However, you should be aware that if you use the remove() method inside a foreach loop, it will give you a ConcurrentModificationException because the foreach loop is not synchronized with the remove() method. To solve this, you should use the Iterator class to iterate through the elements of the ArrayList and call the remove() method on it.
+
+Copy code
+import java.util.ArrayList;
+import java.util.Iterator;
+
+ArrayList<String> groceriesList = new ArrayList<String>();
+groceriesList.add("Tomatoes");
+groceriesList.add("Potatoes");
+groceriesList.add("Bread");
+
+Iterator<String> itr = groceriesList.iterator();
+while (itr.hasNext()) {
+    String item = itr.next();
+    if (item.equals("Potatoes")) {
+        itr.remove();
+    }
+}
+With this way, you can safely remove an element from an ArrayList using a foreach loop.
+
+     */
         /*Simple printing
         System.out.println(numList.toString().replaceAll("[\\[\\],]", ""));
          */
+
+    /*
+    how to print this array 4 4 4 3 in java
+    System.out.println(Arrays.toString(elevator).replaceAll("[\\[\\],]", ""));
+
+    System.out.println(Arrays.toString(elevator).replace("[\\[\\],]", " ")); why replace does not work
+The replace method in the example you provided is intended to remove the square brackets and commas from the output of Arrays.toString(elevator). However, the regular expression passed as the first argument to replace is not correct.
+
+The replace method in Java takes two arguments, the first one is the string to be replaced and the second one is the replacement string. In the provided example, the regular expression "[\\[\\],]" is passed as the first argument, which is intended to match square brackets and commas. However, this regular expression does not match those characters.
+
+To match square brackets and commas, the regular expression should be "[\\[\\],]"
+
+Copy code
+System.out.println(Arrays.toString(elevator).replaceAll("[\\[\\],]", " "));
+This will replace all "[", "]" and "," with a space in the output of Arrays.toString(elevator)
+
+Alternatively, you can use join method from the String class which can be used to join all elements of the array and append the separator between them
+
+Copy code
+String.join(" ", Arrays.toString(elevator).replaceAll("[\\[\\]]","").split(","));
+This will give you the same output as above without using regular expression
+
+
+In Java, you can use a for loop to iterate through the array and print each element. For example:
+
+Copy code
+int[] arr = {4, 4, 4, 3};
+for (int i = 0; i < arr.length; i++) {
+    System.out.print(arr[i] + " ");
+}
+This will print the output: "4 4 4 3"
+
+Alternatively, you can use the Arrays.toString(int[]) method to print all elements of an int array in one line.
+
+Copy code
+import java.util.Arrays;
+int[] arr = {4, 4, 4, 3};
+System.out.println(Arrays.toString(arr));
+This will print the output: "[4, 4, 4, 3]"
+     */
 
         /* Printing a list using a for-loop
          List<String> list = new ArrayList<>(Arrays.asList(
@@ -1328,6 +2618,7 @@ public class Main {
         List<String> list = new ArrayList<>(Arrays.asList(
          "one", "two", "three", "four", "five", "six"));
         System.out.println(String.join("; ", list));
+        System.out.println(String.join(", ", list);
         */
 
     /* Printing exact number of integers from a list отпечатване на точно определен брой цифри от листа
@@ -1436,6 +2727,66 @@ public class Main {
 }
 This would output "The total number of characters in the list is: 14" to the console.
 */
+    /*how to print list
+
+    The easiest and most efficient way to print the list groceriesList at the end of the program would be to use the forEach method and a lambda expression, as shown below:
+
+Copy code
+groceriesList.forEach(item -> System.out.print(item + " "));
+This will iterate through each item in the list and print it, followed by a space.
+Alternatively, you can use the for loop, which is also simple to implement:
+
+Copy code
+for (String item : groceriesList) {
+    System.out.print(item + " ");
+}
+Both of the above options will print the list in a single line with space separated.
+     */
+    /*priting and skiping the last ,
+    You can skip the last comma by using a conditional statement inside the loop that checks if the current item is the last one in the list.
+Here are two ways you can do that:
+
+Copy code
+for (int i = 0; i < groceriesList.size(); i++) {
+    System.out.print(groceriesList.get(i));
+    if (i < groceriesList.size() - 1) {
+        System.out.print(", ");
+    }
+}
+This way is using a for loop and checking if the current index is less than the size of the list subtracted by 1, if it is, it will print a comma after the item.
+
+Another way is by using a for-each loop, and checking if the current item is the last element of the list:
+
+Copy code
+for (int i = 0; i < groceriesList.size() - 1; i++) {
+    System.out.print(groceriesList.get(i) + ", ");
+}
+System.out.print(groceriesList.get(groceriesList.size() - 1));
+This way is using a for-each loop and iterating through the list, but only up to the second-last element. Then print the last element without comma.
+
+Both of the above options will print the list in a single line, with commas separating all elements except the last one.
+     */
+
+    /*
+    List<Integer> integers = Arrays.stream(scan.nextLine().split("@")).collect(Collectors.toList()); how to make that right, when considered that the list includes integers
+You can use the mapToInt() method to convert the stream of strings to a stream of integers before collecting them into a list. Here's an example:
+
+Copy code
+List<Integer> integers = Arrays.stream(scan.nextLine().split("@"))
+                               .mapToInt(Integer::parseInt)
+                               .boxed()
+                               .collect(Collectors.toList());
+The mapToInt() method is used to convert the stream of strings to a stream of integers using the Integer::parseInt method reference. The boxed() method is then used to convert the stream of primitives back to a stream of objects, so that it can be collected into a List<Integer>.
+
+Alternatively, you can use the Collectors.toList() method on the mapToInt() method
+
+Copy code
+List<Integer> integers = Arrays.stream(scan.nextLine().split("@"))
+                               .mapToInt(Integer::parseInt)
+                               .boxed()
+                               .collect(Collectors.toList());
+     */
+
 /*how to print list as following Part <=> traP, leveL <=> Level, sAw <=> wAs
 You can use a for-each loop to iterate through the elements in a list, and then use the reverse() method of the StringBuilder class to reverse each string. Here's an example:
 
@@ -1621,9 +2972,133 @@ In the above example, for each iteration of the for-each loop, the current strin
             }
 
      */
+    /*
+    how can i add into a list with integers in the middle of the list the following -2a
+You can use the insert() method to insert an element at a specific index in a list. For example, if you have a list called my_list and you want to insert the value -2a at index 3, you would use the following code:
+
+Copy code
+my_list.insert(3, -2*a)
+Please note that if 'a' is not defined before this line, you will get an error.
 
 
-    //OBJECTS AND CLASSES
+
+
+emil vasilev
+how can i define 'a' before that line
+You can define the variable 'a' before using it in the insert() method by assigning a value to it. For example, you can define 'a' as an integer:
+
+Copy code
+a = 5
+or as a float:
+
+Copy code
+a = 5.0
+You can also define 'a' as a result of an expression or a function:
+
+Copy code
+a = some_function()
+Copy code
+a = 2 + 3
+It's important to make sure that the value of 'a' is defined before it is used in the insert() method, otherwise you'll get a NameError.
+
+
+
+
+emil vasilev
+i want to have 'a' as a char
+In Python, a character is represented as a string of length 1. To define 'a' as a character, you can assign a single character in single quotes to the variable 'a':
+
+Copy code
+a = 'a'
+You can also use
+
+
+
+
+emil vasilev
+in java
+In Java, a character is represented by the char data type. To define 'a' as a character, you can assign a single character in single quotes to the variable 'a':
+
+
+
+
+emil vasilev
+java: how can i add into a list with integers in the middle of the list the following -2a, where 'a' is a char
+In Java, you can use the List interface and one of its implementing classes, such as ArrayList, to add elements to a list.
+To add the value -2a at index 3, you can use the following code:
+
+Copy code
+List<Integer> myList = new ArrayList<>();
+char a = 'a';
+myList.add(3, -2*(int)a);
+Please note that this will add the ASCII value of 'a' (97) multiplied by -2, not the character '-2a'
+Also, since a char is a primitive type you can't multiply it by -2 directly, you have to cast it to int.
+
+
+
+
+emil vasilev
+i want to add the character '-2a'
+In Java, the List interface and its implementing classes such as ArrayList are designed to store objects, not primitive types like char.
+You can use a List<String> to store a list of string, and add the value '-2a' at index 3, you can use the following code:
+
+Copy code
+List<String> myList = new ArrayList<>();
+myList.add(3, "-2a");
+Also, you can use List<Character> to store a list of characters, and add the value '-2' at index 3 and 'a' at index 4 :
+
+Copy code
+List<Character> myList = new ArrayList<>();
+myList.add(3, '-');
+myList.add(4, '2');
+myList.add(5, 'a');
+Please note that in this case you are storing the characters '-', '2' and 'a' separately, not the string "-2a".
+
+
+
+
+emil vasilev
+i have the following list in java 1 1 2 2 3 3 4 4, and variable moves++; how can i add in the middle of the list the following -moves'a'
+You can use the add() method of the List interface and its implementing classes such as ArrayList to add an element at a specific index in a list. To add the value "-moves'a'" in the middle of the list, you can use the following code:
+
+Copy code
+List<String> myList = new ArrayList<>(Arrays.asList("1", "1", "2", "2", "3", "3", "4", "4"));
+int moves = 1;
+int middleIndex = myList.size()/2;
+myList.add(middleIndex, "-" + moves + "a");
+Here, myList.size()/2 will give you the middle index of the list. Then, you are adding a new element at that index with the value "-moves'a'".
+Please note that the value of the moves variable should be incremented before this line of code.
+
+
+
+
+emil vasilev
+i am getting the error required type Integer, provided String, how can I fix that
+In Java, the type of the elements in the list must be specified when the list is created. The error you're getting is because you are trying to add a String value to a List<Integer>.
+To fix this error you have two options:
+
+Change the type of the List to List<String> and use it as I described above.
+Copy code
+List<String> myList = new ArrayList<>(Arrays.asList("1", "1", "2", "2", "3", "3", "4", "4"));
+int moves = 1;
+int middleIndex = myList.size()/2;
+myList.add(middleIndex, "-" + moves + "a");
+Convert the value you want to add to the list to the correct data type, in this case Integer, before adding it to the list.
+Copy code
+List<Integer> myList = new ArrayList<>(Arrays.asList(1, 1, 2, 2, 3, 3, 4, 4));
+int moves = 1;
+int middleIndex = myList.size()/2;
+myList.add(middleIndex, -1*moves);
+Please note that in the second option you are not adding the character 'a' to the list, you are adding the integer value of moves multiplied by -1.
+Also, since you are adding an integer, you can't concatenate it with a character 'a' like in the first option, instead you need to multiply it by -1 to get the negative value.
+     */
+
+
+    //OBJECTS AND CLASSES Обекти и класове
+
+//Когато създавам нов обект, името на файла трябва да бъде същото както името на обекта, който искам да ползвам
+//Напр файл с име Person.java
+//създавам в друг файл нов обект Person newPerson = new Person(name, age);
 
     /*
 
@@ -1662,22 +3137,31 @@ It's important to note that the OOP principles of encapsulation and information 
     /* public class Songs {  //Alternative - static classSongs {
 
     //характеристиките на класа
-    private String typeList;        //Alternative String typeList;
+    private String typeList;        //Alternative String typeList; -> тук обаче може извън класа да се променя това поле, например в кода мога директно да напиша Songs.typeList = "tova e test"; и така да му променя стойността, това е неконтролирано достъпване и промяна на стойност
     private String name;            //            String name;
     private String time;            //            String time;
+    private List<Double> grade;
 
-    //конструктор
-    public Songs (String typeList, String name, String time){
-    this.typeList = typeList;
+    //конструктор, може да създаваме един или повече конструктори с един или повече характеристики на класа едновременно
+    public Songs (String typeListObj, String name, int time, List<Double> gradeObj){
+    this.typeList = typeListObj;
     this.name = name;
     this.time = time;
+
+    Songs test = new Songs ("lovesong", "KennyG", 3);
+
+    public Songs (String typeList){
+    this.typeList = typeList;
+
+    Songs test = new Songs ("Springsong");
 
     //getters
     public String getTypeList(){
     return this.typeList;
+    return "NewList" + this.typeList;
     public String getName(){
     return this.name;
-    public String getTime(){
+    public int getTime(){
     return this.time;
 
     //така взимам стойностите на характеристиките
@@ -1690,12 +3174,46 @@ It's important to note that the OOP principles of encapsulation and information 
     this.typeList = typeList;
     public void setName(String name){
     this.name = name;
-    public void setTime(String time){
+    public void setTime(int time){
     this.time = time;
 
     //така се актуализира информацията в Main файла
     Songs song = new Songs();                          - създавам нов обект от класа Songs, и в следващите редове му обновявам характеристиките
     song.setTypeList(typeList);
+
+    Alt+Insert -> toString
+
+        @Override
+        public String toString(){
+        String formattedType = "";
+        if(this.type.equals("car")){
+        formattedTpe = "Car";
+        }else if(this.type.equals("truck")){
+         formattedTpe = "Truck";
+        }
+        return String.format("Type: %s%nModel: %s%nColor: %s%nHorsePower: %d", formattedType, this.model, this.color, this.horsepower);
+
+     за да отпечатам vehicle:
+     String enteredModel = scan.nextLine();
+     for(Vehicle currentVehicle : vehiclesList){
+     if(enteredModel.equals(vehicle.getModel())){
+     System.out.println(vehicle);
+     break;
+     }
+
+        Pet pet = new Pet("Rex", 13, "Ivan");
+        System.out.println(pet);
+        result: groomingSalon.Pet@6d03e736 (това е default {package}.{class}@{address}
+        solution: System.out.println(pet.toString()); със toString преобразуваме в текст, може и така System.out.println(pet);
+        В класа Pet пиша:
+        @Override
+        public String toString(){
+        return this.name + " " + this.age + " " - (" + this.owner + ")";
+        result: Rex 13 - (Ivan)
+        @Override
+    public String toString() {
+        return String.format("%s - %s: %s", this.title, this.content, this.author);
+    }
 
      */
 
@@ -1747,6 +3265,71 @@ It's important to note that the OOP principles of encapsulation and information 
      }}}}}
 
      */
+
+/*как да сравняване елементи в обекта в даден лист
+Създаваме клас Student със следните характеристики:
+
+В класа пиша
+public double getGrade(){
+return this.grade;
+}
+В мейн кода пиша
+studentsList.sort(Comparator.comparing(Student::getGrade).reversed();
+studentsList.sort(Comparator.comparing(Student::getGrade).reversed().thenComparing(Comparator.comparing(Student::getFirstName)));
+
+Alternative:
+
+To sort a list of Student objects using the Collections.sort() method, you need to implement the Comparable interface in the Student class and override the compareTo() method to define the natural ordering of Student objects based on their grades.
+
+public class Student implements Comparable<Student> {
+    private String firstName;
+    private String lastName;
+    private double grade;
+
+    public Student(String firstName, String lastName, double grade) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.grade = grade;
+    }
+
+    // getters and setters
+
+    @Override
+    public int compareTo(Student otherStudent) {
+        return Double.compare(this.grade, otherStudent.grade);
+    }
+}
+
+//methods
+    public void editContent(String newContent) {
+        this.content = newContent;
+    }
+
+    Как се ползва метод
+    public void editContent(String newContent) { -> метод в класа
+        this.content = newContent;
+    }
+
+	Article article = new Article(title, content, author); -> обект в мейн файла
+
+	case "Edit":
+                    String newContent = commands.split(": ")[1];
+                    article.editContent(newContent); -> промяна на характеристика на обекта
+                    break;
+
+@Override
+    public String toString() {
+        return String.format("%s - %s: %s", this.title, this.content, this.author);
+    }
+
+In the compareTo() method, we compare the grade of the current student with the grade of the other student.
+
+Then, in your main method, after adding all the students to the list, you can sort the list by calling Collections.sort():
+Collections.sort(listofStudents);
+This will sort the list in ascending order of grades. If you want to sort the list in descending order of grades, you can reverse the list after sorting:
+Collections.sort(listofStudents);
+Collections.reverse(listofStudents);
+ */
 
 
 
@@ -1819,6 +3402,9 @@ so if the substring is not present it will give -1 as the output.
     }
     This will output "The string contains the substring." because the substring "World" is present in the StringBuilder object.
 
+StringBuilder = new StringBuiler ("tovaetestnaemo");
+indexSubstring = "test";
+
 if(input.indexOf(indexSubstring) != - 1){                       //indexSubstring е стринг, от команда и се пише без кавички
                     int start = input.indexOf(indexSubstring);  //indexSubstring е стринг, от команда и се пише без кавички
                     int end = input.indexOf(indexSubstring) + indexSubstring.length();
@@ -1831,6 +3417,8 @@ if(input.indexOf(indexSubstring) != - 1){                       //indexSubstring
                     input.replace(start, end, attach);
 
                     System.out.println(input.toString());
+
+
 
     */
 
@@ -2090,16 +3678,94 @@ Regenerate response
 
 
     //REGULAR EXPRESSIONS REGEX
+/*
 
-    //+ - 1 или безкрайно много
-    //* - 0 или безкрайно много
-    //? - 0 или 1
 
-    //[A-Za-z] - \\w
-    //[0-9] - \\d
+    [A-Za-z] - \w
+    [abc] - Find one character from the options between the brackets
+    [^abc] -	Find one character NOT between the brackets
+    [0-9] - \d matches a digit (equivalent to [0-9])
+    \d{2} - {2} matches the previous token exactly 2 times
+    \d{1,5} - {1,5} matches the previous token between 1 and 5 times, as many times as possible, giving back as needed (greedy)
 
     //(?<user>.....) - създаване на група
 
+    Metacharacters
+    Metacharacter	Description
+    |	Find a match for any one of the patterns separated by | as in: cat|dog|fish
+    .	Find just one instance of any character
+    .	Any character (may or may not match terminator)
+    ^	Finds a match as the beginning of a string as in: ^Hello
+    $	Finds a match at the end of the string as in: World$
+    \d	Find a digit, short of [0-9]
+    \D	Any non-digit, short for [^0-9]
+    \s	Find a whitespace character, short for [\t\n\x0B\f\r]
+    \S	Any non-whitespace character, short for [^\s]
+    \w	Any word character, short for [a-zA-Z_0-9]
+    \W	Any non-word character, short for [^\w]
+    \b	A word boundary
+    \b	Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+    \B	A non word boundary
+    \	Find the Unicode character specified by the hexadecimal number xxxx -  това се пише след \ - uxxxx
+
+
+    Quantifiers
+    Quantifier	Description
+    n+	Matches any string that contains at least one n
+    n*	Matches any string that contains zero or more occurrences of n
+    n?	Matches any string that contains zero or one occurrences of n
+    + - 1 или безкрайно много
+    * - 0 или безкрайно много
+    ? - 0 или 1
+    n{x}	Matches any string that contains a sequence of X n's
+    n{x,y}	Matches any string that contains a sequence of X to Y n's
+    n{x,}	Matches any string that contains a sequence of at least X n's
+
+    Regex Character classes
+    No.	Character Class	Description
+    1	[abc]	a, b, or c (simple class)
+    2	[^abc]	Any character except a, b, or c (negation)
+    3	[a-zA-Z]	a through z or A through Z, inclusive (range)
+    4	[a-d[m-p]]	a through d, or m through p: [a-dm-p] (union)
+    5	[a-z&&[def]]	d, e, or f (intersection)
+    6	[a-z&&[^bc]]	a through z, except for b and c: [ad-z] (subtraction)
+    7	[a-z&&[^m-p]]	a through z, and not m through p: [a-lq-z](subtraction)
+
+    "(\\w)\\1+"
+    The \\w matches any word character (letter, digit, or underscore) and the \\1+ matches whatever was in the first set of parentheses,
+    one or more times. So you wind up matching any occurrence of a word character, followed immediately by one or more of the same word character again.
+Repeated characters in "abcdbaa" : [a]
+Repeated characters in "abcdbaabb" : [a, b]
+
+package com.sample.app;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class App {
+
+ private static List<String> repeatedChars(String str) {
+
+  Pattern pattern = Pattern.compile("(\\w)\\1+");
+  Matcher matcher = pattern.matcher(str);
+
+  List<String> list = new ArrayList<>();
+  while (matcher.find()) {
+   list.add(matcher.group(1));
+  }
+
+  return list;
+ }
+
+ public static void main(String args[]) throws FileNotFoundException {
+  System.out.println("Repeated characters in \"abcdbaa\" : " + repeatedChars("abcdbaa"));
+  System.out.println("Repeated characters in \"abcdbaabb\" : " + repeatedChars("abcdbaabb"));
+ }
+}
+*/
 /*
 import java.util.regex.*;
 public class TEST {
@@ -2126,6 +3792,29 @@ public class TEST {
     }
 }
  */
+/*Example
+"=[A-Z][A-Za-z]{2,}=|/[A-Z][A-Za-z]{2,}/") или
+(?<symbols>[=/])(?<destinations>[A-Z][a-zA-Z]{2,})\1
+(?<symbols>[=/]) - Surrounded by "=" or "/" on both sides (the first and the last symbols must match)
+(?<destinations>[A-Z][a-zA-Z]{2,}) - After the first "=" or "/" there should be only letters (the first must be upper-case, other letters could be upper or lower-case)
+The letters must be at least 3
+
+(?<symbols>[=/])(?<destinations>[A-Z][a-zA-Z]{2,})(\\k<symbols>) в програмата за регекс се пише (\k<symbols>), в интелиджей (\\k<symbols>) 
+(\\k<symbols>) - Matches the same symbol that was captured in the symbols group.
+(?<=\k<symbols>) - Uses a positive lookbehind to assert that the previous character is the same symbol that was captured in the symbols group.
+(?<symbols>\k<symbols>) - Captures the same symbol that was captured in the symbols group in a new group called symbols. This is used to ensure that the first and last symbols match.
+
+
+=Hawai=/Cyprus/=Invalid/invalid==i5valid=/I5valid/=i=
+result
+=Hawai=
+/Cyprus/
+
+ */
+
+
+
+
     /*Example
     (@|#)(?<word>[A-Za-z]{3,})\1\1(?<mirror>[A-Za-z]{3,})\1
     @|#: Matches either the "@" or "#" character. The pipe symbol | is used as an "or" operator in regular expressions.
@@ -2134,6 +3823,75 @@ public class TEST {
     (?<mirror>[A-Za-z]{3,}): Matches a sequence of 3 or more letters (uppercase or lowercase). The ?<mirror> is a named capturing group, it is used to assign a name to the matched group.
     This regular expression pattern will match a string that starts and ends with the same character ("@" or "#") and contains two groups of 3 or more letters in between. The two groups of letters are captured and can be accessed by their group names ("word" and "mirror").
      */
+
+/*
+ (?![#|]\|)
+ Certainly! (?![#|]\|) is a negative lookahead assertion in a regular expression, which is used to check that a pattern does not match immediately after the current position in the input string.
+
+In the regular expression [#|]([A-Za-z\s]+)[#|](\d{2}/\d{2}/\d{2})[#|](\d{1,5})(?![#|]\|), the negative lookahead assertion (?![#|]\|) is used to ensure that the pattern [#|]\| does not occur immediately after the third capturing group, which captures the item price.
+
+Specifically, [#|]\| matches either "#" or "|" followed by a "|" character. The negative lookahead assertion (?!...) checks that the pattern inside the parentheses does not occur after the current position in the input string. If the pattern does occur, the regular expression fails to match.
+
+So in this case, (?![#|]\|) checks that there is no "#" or "|" character immediately followed by a "|" character after the item price. This ensures that the regular expression only matches input strings where the ending character is "#" or "|".
+ */
+
+/*Example
+You can use the following regular expression to extract the food info from the given pattern:
+
+(?<symbols>[#\\|])(?<name>[A-za-z\\s]+)(\\1)(?<date>[0-9]{2}[\\/][0-9]{2}[\\/][0-9]{2})(\\1)(?<calories>[\\d]{1,5})(\\1)
+(?<symbols>[#\\|]): named capture group symbols, which matches either # or |.
+(?<name>[A-za-z\\s]+): named capture group name, which matches one or more lowercase or uppercase letters or whitespace characters.
+(\\1): matches the same symbol that was matched in the symbols capture group (i.e., # or |).
+(?<date>[0-9]{2}[\\/][0-9]{2}[\\/][0-9]{2}): named capture group date, which matches a date in the format dd/mm/yy.
+(\\1): matches the same symbol that was matched in the symbols capture group.
+(?<calories>[\\d]{1,5}): named capture group calories, which matches a number with 1-5 digits.
+
+
+([#|])([A-Za-z\s]+)\1(\d{2}/\d{2}/\d{2})\1(\d{1,5})\1
+([#|]) - either # or |
+\1 only one of the ([#|])
+
+
+
+[#|]([A-Za-z]+)[#|](\d{2}/\d{2}/\d{2})[#|](\d{1,5})[#|]
+[#|] - a character group that matches either # or |
+([A-Za-z]+) - a capturing group that matches one or more uppercase or lowercase letters
+(\d{2}/\d{2}/\d{2}) - a capturing group that matches a date in dd/mm/yy format
+\d matches a digit (equivalent to [0-9])
+\d{2} - {2} matches the previous token exactly 2 times
+\d{1,5} - {1,5} matches the previous token between 1 and 5 times, as many times as possible, giving back as needed (greedy)
+
+[#|]([A-Za-z\s]+)#(\d{2}/\d{2}/\d{2})#(\d{1,5})[#|]
+Here's how to interpret the regular expression:
+
+[#|] - a character group that matches either # or |
+([A-Za-z\s]+) - a capturing group that matches one or more uppercase or lowercase letters, or whitespace characters
+# - matches the # character
+(\d{2}/\d{2}/\d{2}) - a capturing group that matches a date in dd/mm/yy format
+# - matches the # character
+(\d{1,5}) - a capturing group that matches an integer between 0-10000
+[#|] - a character group that matches either # or |
+To extract the food info from a string input, you can use the Pattern and Matcher classes from the java.util.regex package as follows:
+
+java
+Copy code
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+String input = "#Bread#19/03/21#4000#|Invalid|03/03.20||Apples|08/10/20|200||Carrots|06/08/20|500||Not right|6.8.20|5|";
+
+Pattern pattern = Pattern.compile("[#|]([A-Za-z\\s]+)#(\\d{2}/\\d{2}/\\d{2})#(\\d{1,5})[#|]");
+Matcher matcher = pattern.matcher(input);
+
+while (matcher.find()) {
+    String item_name = matcher.group(1);
+    String expiration_date = matcher.group(2);
+    int calories = Integer.parseInt(matcher.group(3));
+
+    // do something with the extracted food info
+}
+This code will iterate over all matches of the regular expression in the input string and extract the item name, expiration date, and calories for each match. Note that you may want to add error handling code to handle cases where the regular expression does not match the input string.
+ */
 
 /*Example
 package Fundamentals.Mai_2022.P31RegularExpressionsExercise;
@@ -2573,4 +4331,3 @@ After that, I am using a for-each loop to iterate over the map's entry set, and 
 
 This way you can print your map in the order the keys were entered.
      */
-}
